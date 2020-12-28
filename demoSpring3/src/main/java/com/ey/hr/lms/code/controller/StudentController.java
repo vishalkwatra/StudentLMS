@@ -1,6 +1,7 @@
 package com.ey.hr.lms.code.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,8 @@ import com.ey.hr.lms.code.entities.Student;
 public class StudentController {
 
 	@Autowired
+//	@Qualifier("onlineStudent")
+	@Qualifier("offline")
 	Student studentObj;
 	
 	@RequestMapping("/getAllInfo")
@@ -20,6 +23,7 @@ public class StudentController {
 		return studentObj.giveAllInString();
 	}
 
+	/*
 	@RequestMapping("/getAllInfo/{agePassedInURL}")
 	public String getAllStudentInfoWithAge(@PathVariable("agePassedInURL") int age) {
 		return studentObj.giveAllInString() + " ,Age: " + Integer.toString(age);
@@ -52,4 +56,5 @@ public class StudentController {
 		studentObj.changeValueofLocation();
 		return studentObj;
 	}
+	*/
 }
