@@ -1,5 +1,8 @@
 package com.ey.hr.lms.code.entities;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Student {
 
 	public String firstName;

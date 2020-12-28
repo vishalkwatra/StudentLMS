@@ -1,5 +1,6 @@
 package com.ey.hr.lms.code.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,8 @@ import com.ey.hr.lms.code.entities.Student;
 @RestController
 public class StudentController {
 
-	Student studentObj = new Student();
+	@Autowired
+	Student studentObj;
 	
 	@RequestMapping("/getAllInfo")
 	public String getAllStudentInfo() {
